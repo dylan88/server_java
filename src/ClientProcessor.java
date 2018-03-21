@@ -39,6 +39,27 @@ public class ClientProcessor extends Thread {
         this.server = server;
     }
 
+    public String clear_data(String test)
+    {
+        int i = 0;
+        boolean bol = false;
+        String result = "";
+        while (i +1 < test.length() && bol == false)
+        {
+            if (test.charAt(i) != '_' || test.charAt(i = 1) != '_')
+                bol = true;
+            i += 1;
+        }
+        bol = false;
+        while (i < test.length())
+        {
+            result += test.charAt(i);
+            i++;
+        }
+        System.out.println("miaou");
+        return result;
+    }
+
 
     public void run() {
         System.err.println("traitement de la connection cliente");
@@ -73,7 +94,9 @@ public class ClientProcessor extends Thread {
                     //System.err.println("\n" + debug);
                     if (!(remote.getAddress().getHostAddress().equals(this.ip))) {
                         System.out.print("apppppppp");
+                        this.data = clear_data(response);
                         this.data = response;
+
                         this.server.send_data();
                         System.out.print("app \n"+response);
                         //this.data = "";
