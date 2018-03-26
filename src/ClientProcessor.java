@@ -94,7 +94,7 @@ public class ClientProcessor extends Thread {
                     //System.err.println("\n" + debug);
                     if (!(remote.getAddress().getHostAddress().equals(this.ip))) {
                         System.out.print("apppppppp");
-                        this.data = clear_data(response);
+                        //this.data = clear_data(response);
                         this.data = response;
 
                         this.server.send_data();

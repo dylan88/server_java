@@ -99,7 +99,7 @@ public class Server {
             if (ClApp.data.contains("mob_")) {
                 System.out.println("YOUPOIIIIIIIIIIIIIIIIIIIIIIIII");
                 ClApp.sendresponse("ok");
-//                ClApp.data = "";
+                ClApp.data = "";
             }
             if (ClApp.data.contains("map")) {
                 if (ClPlugin.data.contains("coordinates")) {
@@ -109,8 +109,9 @@ public class Server {
                     msg = jsonObject.get("coordinates").getAsString();
                     msg = msg.replaceAll("\\s+","");
                     System.out.println("MESAAGGGEE" + msg + "\n\n\n\n");
-
                     ClApp.sendresponse(msg);
+                    ClApp.data = "";
+                    ClPlugin.data = "";
                 }
             }
             //ClApp.sendresponse(ClPlugin.data);
