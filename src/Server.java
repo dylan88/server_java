@@ -114,6 +114,10 @@ public class Server {
                     ClPlugin.data = "";
                 }
             }
+            if (ClApp.data.equals("inventory")) {
+                //traitement de l'inventaire
+                //exemple de string a retourner :   // String tmps = "{\"inventory\": [{\"id\": \"1\", \"name\": \"sword\", \"number\": \"1\"}, {\"id\": \"2\", \"name\": \"apple\", \"number\": \"2\"}]}";
+            }
             //ClApp.sendresponse(ClPlugin.data);
         }
     }
