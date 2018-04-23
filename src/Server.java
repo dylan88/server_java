@@ -114,9 +114,18 @@ public class Server {
                     ClPlugin.data = "";
                 }
             }
-            if (ClApp.data.equals("inventory")) {
-                //traitement de l'inventaire
-                //exemple de string a retourner :   // String tmps = "{\"inventory\": [{\"id\": \"1\", \"name\": \"sword\", \"number\": \"1\"}, {\"id\": \"2\", \"name\": \"apple\", \"number\": \"2\"}]}";
+            if (ClApp.data.contains("inventory")) {
+                if (ClPlugin.data.contains("name")) {
+                    System.out.println("send to app:["+ClPlugin.data+"]\n");
+                    ClApp.sendresponse("["+ClPlugin.data+"]");
+                    ClApp.data = "";
+                } else {
+                    System.out.println("send to app:nothing\n");
+                    ClApp.sendresponse("nothing");
+                    //ClPlugin.sendresponse("");
+                    ClApp.data = "";
+                    ClPlugin.data = "";
+                }
             }
             //ClApp.sendresponse(ClPlugin.data);
         }
